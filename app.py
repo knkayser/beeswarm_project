@@ -22,7 +22,7 @@ def data():
 def names():
 
     cursor = sqlite3.connect(database).cursor()
-    cursor.execute('''select DISTINCT Current_State from Migration''')
+    cursor.execute('''select DISTINCT `Current State` from Migration''')
 
     result=cursor.fetchall()
     state_list=[]
@@ -35,7 +35,7 @@ def names():
 @app.route("/<year>/<state>")
 def detailed_data(year,state):
     cursor = sqlite3.connect(database).cursor()
-    cursor.execute("select * from Migration where YEAR="+year+" AND Current_State='"+state+"'")
+    cursor.execute("select * from Migration where YEAR="+year+" AND `Current State`='"+state+"'")
     r = [dict((cursor.description[i][0].replace("_"," "), value)
               for i, value in enumerate(row)) for row in cursor.fetchall()]
     return jsonify({'myCollection' : r})
