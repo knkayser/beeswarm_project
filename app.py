@@ -1,5 +1,4 @@
 from flask import Flask, render_template, redirect, jsonify
-from flaskext.mysql import MySQL
 import sqlite3
 from sqlite3 import Error
 
@@ -18,6 +17,20 @@ def data():
     r = [dict((cursor.description[i][0].replace("_"," "), value)
               for i, value in enumerate(row)) for row in cursor.fetchall()]
     return jsonify({'myCollection' : r})
+
+@app.route("/states")
+def names():
+
+    cursor = sqlite3.connect(database).cursor()
+    cursor.execute('''select DISTINCT Current_State from Migration''')
+
+    result=cursor.fetchall()
+    state_list=[]
+    for x in result:
+        new_x=x[0]
+        state_list.append(new_x)
+    
+    return jsonify(state_list)
 
 @app.route("/<year>/<state>")
 def detailed_data(year,state):
