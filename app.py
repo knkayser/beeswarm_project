@@ -13,6 +13,7 @@ def main():
 @app.route('/data')
 def data():
     cursor = sqlite3.connect(database).cursor()
+    #cursor.execute("select * from Migration where YEAR="+year+" AND `Current State`='"+state+"'")
     cursor.execute('''select * from Migration''')
     r = [dict((cursor.description[i][0].replace("_"," "), value)
               for i, value in enumerate(row)) for row in cursor.fetchall()]
