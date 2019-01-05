@@ -6,41 +6,49 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>US State Migration</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:400italic,600italic,700italic,200,300,400,600,700,900">
   <script src="https://d3js.org/d3.v5.js"></script>
-  
+  <script src="http://d3js.org/queue.v1.min.js"></script>
+  <script src="http://d3js.org/topojson.v1.min.js"></script>
+  <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>  
 </head>
 
 <body>
 
-  <div class="container">
+  <div class="container" style="background-color:#bec10e10;">
     <div class="row">
-      <div class="col-md-12 jumbotron text-center">
-        <h1>US State Migration</h1>
-        <p>Use the interactive charts below to explore the dataset</p>
+      <div class="col-md-12 jumbotron text-center" style="background-image:url(migration.jpg); background-size: 100%; height: 100%;">
+        <h1 class="display-4"><b>US MIGRATION</b></h1>
       </div>
+    <div class="Year">
+        <label for="Year" 
+          style="display: inline-block; width: 500px; text-align: left">
+          <span id="Year"></span>
+        </label>
+      <div class="slider"></div>
     </div>
-    <div class="slider"></div>
-
     <div class="row">
       <div class="col-md-3">
         <div class="well">
-          <h5>SELECT State:</h5>
+          <h2>State:</h2>
           <select id="selDataset" onchange="optionChanged(this.value)"></select>
         </div>
       </div>
       <div class="col-md-5">
+        <div id="legendLinear" style="display: inline-block"></div>
         <div id="choropleth"></div>
       </div>
       <div class="col-md-4">
-        <div id="plot2"></div>
+        <!-- <canvas id="myChart" width="400" height="400"></canvas> -->
       </div>
     </div>
   </div>
   <div class="row">
     <div class="col-md-12">
-      <div id="plot3"></div>
+        <h5>Selected State Bar Chart</h5>
+        <div id="myDiv"></div>
     </div>
   </div>
 
@@ -49,7 +57,11 @@
   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
   <script src="{{ url_for('static', filename='js/app.js') }}"></script>
   <script src="{{ url_for('static', filename='js/map.js') }}"></script>
-  <!--  <script src="{{ url_for('static', filename='js/Kelly_plot.js') }}"></script> -->
+  <script src="{{ url_for('static', filename='js/Kelly_plot.js') }}"></script>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 
 </body>
 
