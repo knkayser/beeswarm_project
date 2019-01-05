@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>US State Migration</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:400italic,600italic,700italic,200,300,400,600,700,900">
   <script src="https://d3js.org/d3.v5.js"></script>
@@ -17,11 +18,17 @@
 
 <body>
 
-  <div class="container" style="background-color:#bec10e10;">
+  <div class="container-fluid">
+      <div class="jumbotron" style="background-image: url('static/img/migration.jpg')"></div>
+            <h1 class="display-3"><b>US MIGRATION</b></h1>
+        </div>
+<!--     
+    
     <div class="row">
-      <div class="col-md-12 jumbotron text-center" style="background-image:url(migration.jpg); background-size: 100%; height: 100%;">
+      <header class="col-md-12 jumbotron text-center" style="background-image: url('static/img/migration.jpg')">
         <h1 class="display-4"><b>US MIGRATION</b></h1>
-      </div>
+      </div> -->
+
     <div class="Year">
         <label for="Year" 
           style="display: inline-block; width: 500px; text-align: left">
