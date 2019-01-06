@@ -122,16 +122,15 @@ function update_map(year, state, update = false) {
 			.text(function(d, i) { return legendText[i]; });
 					
 		}); // end reading the us-json file loop
-
 	}); // end connecting to database loop
 } // end update_map function
 
 // called when the state drop-down is changed
 // reads the value of the drop-down and slider, and request values from API route
-function optionChanged(state) {
-	year = d3.select('#slider').property('value')
-	update_map(year, state, update = true)
-};
+// function optionChanged(state) {
+// 	year = d3.select('#slider').property('value')
+// 	update_map(year, state, update = true)
+// };
 
 function yearChanged(year) {
 	state = d3.select('#selDataset').property('value')
@@ -152,17 +151,16 @@ var slider = d3.select(".slider")
 		// adjust the text on the range slider
 		SliderYear = this.value
 		slider.property("Year", SliderYear)
-		d3.select("Year").text(SliderYear)
 		d3.select("#Year").text(SliderYear);
 		d3.select("#Year").property("value", SliderYear);
 });
 
 // d3 state drop-down 
-var drop_down = d3.select("#selDataset")
-	.append("input")
-	.on("input", function() {
-		optionChanged(this.value)
-});
+// var drop_down = d3.select("#selDataset")
+// 	.append("input")
+// 	.on("input", function() {
+// 		optionChanged(this.value)
+// });
 
 // initial base map
 update_map(2005, 'Alabama');

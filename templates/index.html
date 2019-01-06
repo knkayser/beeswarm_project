@@ -18,12 +18,26 @@
 
 <body>
 
-  <div class="container-fluid">
-      <div class="jumbotron" style="background-image: url('static/img/migration.jpg')"></div>
-            <h1 class="display-3"><b>US MIGRATION</b></h1>
+  <!-- <div class="jumbotron" style="background-image: url('static/img/migration.jpg')">
+      <div class="container">
+        <h1><b>US MIGRATION</b></h1>
+      </div>
+    </div> -->
+
+    <div class="jumbotron" style="background-image: url('static/img/migration.jpg')">
+        <div class="container">
+          <h1>NET DOMESTIC MIGRATION</h1>
         </div>
+      </div>
 <!--     
-    
+  <div class="jumbotron"> 
+  <div class="container">
+    <h1>Header title text</h1>
+    <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. </p>
+  </div>
+</div>  
+
+
     <div class="row">
       <header class="col-md-12 jumbotron text-center" style="background-image: url('static/img/migration.jpg')">
         <h1 class="display-4"><b>US MIGRATION</b></h1>
@@ -54,7 +68,7 @@
   </div>
   <div class="row">
     <div class="col-md-12">
-        <h5>Selected State Bar Chart</h5>
+        <!-- <h5>Selected State Bar Chart</h5> -->
         <div id="myDiv"></div>
     </div>
   </div>
@@ -64,7 +78,7 @@
   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
   <script src="{{ url_for('static', filename='js/app.js') }}"></script>
   <script src="{{ url_for('static', filename='js/map.js') }}"></script>
-  <script src="{{ url_for('static', filename='js/Kelly_plot.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/barplot.js') }}"></script>
 
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>

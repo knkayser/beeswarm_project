@@ -13,21 +13,19 @@ function init() {
   
       // Use the first sample from the list to build the initial plots
       const firstState = stateNames[0];
-      
-      buildChart1(firstState);
-      buildChart2(firstState);
-      buildChart3(firstState);
+      buildChart(firstState);
     });
   }
-
-
   
-  function optionChanged(newState) {
-    // Fetch new data each time a new sample is selected
-    buildChart1(firstState);
-    buildChart2(firstState);
-    buildChart3(firstState);
-  }
+//  function optionChanged(newState) {
+//    // Fetch new data each time a new sample is selected
+function optionChanged(firstState) {
+	year = d3.select('#slider').property('value')
+  buildChart(firstState);
+  update_map(year, firstState, update = true)
+};
+
+//  }
   
   // Initialize the dashboard
   init();
