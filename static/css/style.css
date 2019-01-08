@@ -42,3 +42,9 @@ body, html {
   p {
     margin-left: -2%;
   } */
+
+  .state {
+    fill: #e3e3e3;
+    stroke: #333;
+    stroke-width: 1.0;
+  }

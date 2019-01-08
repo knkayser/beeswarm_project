@@ -68,25 +68,34 @@ function update_map(year, state, update = false) {
 				.data(us_json.features)
 				.enter()
 				.append("path")
+				.attr("class", "state") //outline the states
 				.attr("d", path)
 				.style("fill", function(d) {
 					var value = d.properties.value;
-					if (value) {
-						//console.log(value);
+					var name = d.properties.name;
+				//	console.log(name, value);
+					if (value !== 0 && state !== name)  {
 						return color(value);
+					} else if (value == 0 && state !== name) {
+						return "#d1e5f0" //return a color for states with zero value, but is not the selector state
 					} else {
 						return "black"
 					}
 				})
 
 			} else {
-				//console.log("updated");
+				//console.log("updated");`
 				svg.selectAll("path")
 				.data(us_json.features)
+				.attr("class", "state") //outline the states
 				.style("fill", function(d) {
 					var value = d.properties.value;
-					if (value) {
+					var name = d.properties.name;
+					//console.log(name, value)
+					if (value !== 0 && state !== name) {
 						return color(value);
+					} else if (value == 0 && state !== name) {
+						return "#d1e5f0" //return a color for states with zero value, but is not the selector state
 					} else {
 						return "black"
 					}
